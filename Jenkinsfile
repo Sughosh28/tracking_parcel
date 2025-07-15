@@ -10,20 +10,20 @@ pipeline {
 
         stage('Build App') {
             steps {
-                sh 'mvn clean install'
+                bat 'mvn clean install'
             }
         }
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t logistics-tracker .'
+                bat 'docker build -t logistics-tracker .'
             }
         }
 
         stage('Start with Docker Compose') {
             steps {
-                sh 'docker-compose down || true'
-                sh 'docker-compose up -d --build'
+                bat 'docker-compose down || true'
+                bat 'docker-compose up -d --build'
             }
         }
     }
