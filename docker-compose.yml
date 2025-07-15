@@ -19,7 +19,7 @@ services:
     image: postgres:15
     container_name: postgres
     ports:
-      - "5432:5432"
+      - "6543:5432"
     environment:
       POSTGRES_DB: tracking
       POSTGRES_USER: postgres
